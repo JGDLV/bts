@@ -1,0 +1,14 @@
+-
+    var cta = {
+        header: 'Прежде чем заказать материалы, изучите полный прайс-лист – <br>отправим его на указанный email',
+        text: 'А если не знаете, какая марка вам подойдет – бесплатно проконсультируем и посоветуем оптимальный вариант',
+        button: { href: '#callback', text: 'Прайс-лист' }
+    }
+
+.cta#cta(style="background-image:url('img/cta-bg.jpg')")
+    .container
+        .cta__inner.flex
+            .cta__text-part
+                h2.cta__header !{cta.header}
+                p.cta__text !{cta.text}
+            a.cta__button.btn(href=cta.button.href) !{cta.button.text}

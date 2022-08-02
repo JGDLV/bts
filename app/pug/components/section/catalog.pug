@@ -1,0 +1,88 @@
+-
+	var catalog = {
+		header: 'Продажа бетона',
+		subheader: 'Все популярные марки материала от М100 до М550 всегда в наличии',
+			items: [
+			{
+				image: 'img/product.jpg',
+				title: 'Бетон М100',
+				description: 'БСГ B 7.5 F 50 W 2',
+				price: 'от 4 560 руб.',
+				button: { href: '#', text: 'Подробнее' }
+			},
+			{
+				image: 'img/product.jpg',
+				title: 'Бетон М100',
+				description: 'БСГ B 7.5 F 50 W 2',
+				price: 'от 4 560 руб.',
+				button: { href: '#', text: 'Подробнее' }
+			},
+			{
+				image: 'img/product.jpg',
+				title: 'Бетон М100',
+				description: 'БСГ B 7.5 F 50 W 2',
+				price: 'от 4 560 руб.',
+				button: { href: '#', text: 'Подробнее' }
+			},
+			{
+				image: 'img/product.jpg',
+				title: 'Бетон М100',
+				description: 'БСГ B 7.5 F 50 W 2',
+				price: 'от 4 560 руб.',
+				button: { href: '#', text: 'Подробнее' }
+			},
+			{
+				image: 'img/product.jpg',
+				title: 'Бетон М100',
+				description: 'БСГ B 7.5 F 50 W 2',
+				price: 'от 4 560 руб.',
+				button: { href: '#', text: 'Подробнее' }
+			},
+			{
+				image: 'img/product.jpg',
+				title: 'Бетон М100',
+				description: 'БСГ B 7.5 F 50 W 2',
+				price: 'от 4 560 руб.',
+				button: { href: '#', text: 'Подробнее' }
+			},
+		],
+		banner: {
+			header: 'Предлагаем купить материалы по стоимости производителя без накруток',
+			text: 'Получите полный прайс-лист с ценами на весь бетон из каталога – отправим его на указанный e-mail',
+			button: { href: '#price', text: 'Получить прайс-лист' }
+		}
+	}
+
+.catalog#catalog
+	.container
+		h1.catalog__header !{catalog.header}
+		p.catalog__subheader.subheader !{catalog.subheader}
+		.catalog__inner
+			.sidebar
+				.sidebar__button.btn Показать каталог
+				.sidebar-menu
+					ul.sidebar-menu-items
+						each item, index in menu
+							if index == 0
+								each i, index in item.items
+									if index == 1
+										li.sidebar-menu__item.active
+											a.sidebar-menu__link(href="#") !{i.text}
+									else
+										li.sidebar-menu__item
+											a.sidebar-menu__link(href="#") !{i.text}
+				.sidebar-banner
+					.sidebar-banner__header !{catalog.banner.header}
+					.sidebar-banner__text !{catalog.banner.text}
+					a.sidebar-banner__button.btn(href=catalog.banner.button.href) !{catalog.banner.button.text}
+			.section
+				.section-items
+					each item in catalog.items
+						.section__item.flex
+							.section__item-image-part
+								img.section__item-image(src=item.image, alt='')
+							.section__item-text-part
+								p.section__item-title !{item.title}
+								p.section__item-description !{item.description}
+								p.section__item-price !{item.price}
+								a.section__item-button.btn.btn_stroke(href=item.button.href) !{item.button.text}

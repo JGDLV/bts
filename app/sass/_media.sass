@@ -1,0 +1,389 @@
+@media (min-width: 576px)
+	.container
+		max-width: 540px
+
+@media (min-width: 768px)
+	.container
+		max-width: 720px
+
+@media (min-width: 992px)
+	.container
+		max-width: 960px
+
+@media (min-width: 1200px)
+	.container
+		max-width: 1200px
+
+@media (max-width: 1200px)
+	h1
+		font-size: 2.5em !important
+		line-height: normal !important
+	h2
+		font-size: 2em !important
+		line-height: normal !important
+	.subheader
+		font-size: 1.5em !important
+		line-height: normal !important
+	.header
+		display: none
+		&_fixed
+			display: block
+			padding: 10px 0
+			&__buttons
+				margin-left: auto
+			.menu
+				display: none
+				position: absolute
+				left: 0
+				right: 0
+				top: 100%
+				background: #fff
+				padding: 0 15px 10px
+				z-index: 20
+				&-items
+					display: block
+					text-align: left
+					.sub-menu__toggle
+						width: 20px
+						height: 20px
+						top: 5px
+						right: 0
+						background: url('../img/arrow.svg') no-repeat center
+						background-size: 10px
+						display: block
+						position: absolute
+						cursor: pointer
+						border: 1px solid rgba(#ff6600, .5)
+						border-radius: 50%
+						+tr
+						&.active
+							transform: rotate(810deg)
+					& > li
+						text-align: left
+						&::after
+							content: none !important
+						& > a
+							line-height: 36px !important
+						& > ul
+							display: none
+							position: static
+							opacity: 1
+							box-shadow: none
+							padding-bottom: 10px
+							& > li
+								&::after
+									content: none !important
+								& > a
+									// border: 0
+								& > ul
+									display: none !important
+	.menu-toggle
+		display: flex
+		position: static
+		border: 0
+		border-radius: 0
+		width: 40px
+		height: 40px
+		background-color: #ff6600
+		transform: none
+		margin-left: 10px
+		span
+			background: #fff !important
+	.intro
+		padding: 30px 0 40px
+		&__subheader
+			font-size: 2em
+			padding: 10px 15px
+	.benefits
+		padding: 40px 0
+		&-items
+			grid-template-columns: repeat(2, 1fr)
+	.catalog
+		padding: 40px 0
+		&-items
+			grid-template-columns: repeat(2, 1fr)
+	.cta
+		padding: 40px 0
+		text-align: center
+		&__text
+			&-part
+				width: 100% !important
+		&__button
+			margin: 20px auto 0
+	.scheme
+		padding: 40px 0
+		&-items
+			grid-template-columns: repeat(3, 1fr)
+		&__item
+			&-text
+				&-part
+					&::after
+						content: none
+	.about
+		padding: 40px 0
+	.partners
+		padding: 40px 0
+	.btn
+		height: auto
+		width: auto
+		padding: 10px 15px !important
+		max-width: 300px
+		font-size: 1.25em
+
+	.description
+		padding: 40px 0
+		&__item
+			&-header
+				line-height: normal
+
+	.inner .catalog
+		padding-bottom: 40px
+
+	.reviews
+		padding: 40px 0
+
+	.faq
+		padding: 40px 0
+		&__item
+			&-head
+				line-height: normal
+				padding-top: 15px
+				padding-bottom: 15px
+
+	.product
+		padding: 0 0 40px
+		&__props
+			width: 100%
+			margin-bottom: 20px
+		&__description
+			width: 100%
+		&__order
+			align-items: center
+			width: 100%
+			margin-bottom: 20px
+			&-text
+				padding: 0
+		&__calc
+			margin: 0 0 0 30px
+	.footer
+		&__top
+			padding: 30px 0
+
+@media (max-width: 992px)
+	.about
+		&__inner
+			grid-template-columns: 1fr
+	.footer
+		&__top
+			&-inner
+				grid-template-columns: 1fr
+		&__part
+			text-align: center
+	.section
+		&-items
+			grid-template-columns: 1fr
+	.reviews
+		&__inner
+			grid-template-columns: 1fr
+	.product
+		&__inner
+			display: block
+		&__left
+			margin-bottom: 30px
+
+@media (max-width: 768px)
+	h1
+		font-size: 2em !important
+		line-height: normal !important
+	h2
+		font-size: 1.5em !important
+		line-height: normal !important
+	.subheader
+		font-size: 1.25em !important
+		margin-top: 10px
+	.intro
+		&__subheader
+			font-size: 1.25em
+	.benefits
+		&-items
+			grid-template-columns: 1fr
+	.scheme
+		&-items
+			grid-template-columns: repeat(2, 1fr)
+		&-bottom
+			&-items
+				grid-template-columns: 1fr
+			&__item
+				&-header
+					font-size: 1.5em
+					line-height: 40px
+				&-text
+					height: calc(100% - 40px)
+	.partners
+		&-items
+			grid-template-columns: repeat(2, 1fr)
+	.footer
+		&__bottom
+			font-size: 13px
+
+	.sidebar
+		padding-bottom: 30px
+		&__button
+			display: flex
+			margin-bottom: 20px
+		&-menu
+			display: none
+
+	.inner .catalog__inner
+		display: block
+
+	.description
+		&__text
+			font-size: 13px
+			line-height: calc(18 / 13)
+
+	.faq
+		&__inner
+			grid-template-columns: 1fr
+		&__right
+			padding-top: 0
+
+@media (max-width: 576px)
+	.btn
+		max-width: 240px
+	.subheader
+		margin-bottom: 30px
+	.benefits
+		&-items
+			display: flex
+			overflow: auto
+			padding-bottom: 30px
+			grid-gap: 15px
+		&__item
+			min-width: 80%
+			display: block
+			&-image
+				&-part
+					margin-bottom: 15px
+			&-text
+				&-part
+					width: 100%
+	.catalog
+		&-items
+			display: flex
+			overflow: auto
+			padding-bottom: 30px
+			grid-gap: 15px
+		&__item
+			min-width: 270px
+	.cta
+		&__text
+			font-size: 15px
+			line-height: normal
+	.scheme
+		&-items
+			display: flex
+			overflow: auto
+			padding: 30px 0
+			grid-gap: 15px
+		&__item
+			min-width: 250px
+	.footer
+		&__bottom
+			padding: 10px 0
+			line-height: normal
+		&__part
+			text-align: left
+		p
+			width: 100%
+			text-align: left
+			padding: 5px 0
+	.social
+		&-items
+			justify-content: flex-start
+	#top
+		right: 15px
+		bottom: 15px
+	.modal
+		&-form
+			&__label
+				&_name, &_phone
+					grid-column-start: 1
+					grid-column-end: 3
+				&_comment
+					margin-bottom: 0
+		&__text
+			font-size: 1.15em
+			line-height: normal
+	.header_fixed__button
+		width: 30px
+		height: 30px
+		background-size: 15px
+	.menu-toggle
+		width: 30px
+		height: 30px
+
+	.description
+		&-items
+			display: flex
+			overflow: auto
+			margin-bottom: 10px
+		&__item
+			min-width: 75%
+			&-header
+				font-size: 18px
+	.section
+		&-items
+			grid-gap: 15px
+			display: flex
+			overflow: auto
+			padding: 30px 0
+		&__item
+			min-width: 75%
+			display: block
+			box-shadow: none
+			&-text-part
+				width: 100%
+				height: auto
+			&-image
+				width: 100%
+				&-part
+					width: 100%
+					border: 0
+					border-bottom: 5px solid #fff
+	.faq
+		&__item
+			&-head
+				font-size: 14px
+		&-cta
+			&__header
+				font-size: 14px
+				line-height: normal
+			&__text
+				font-size: 13px
+				line-height: normal
+	.breadcrumbs
+		&__item
+			margin-bottom: 10px
+	.product
+		&__order
+			&-text
+				width: 100%
+				margin-top: 20px
+		&__table
+			table
+				display: block
+				width: 100%
+				overflow: auto
+
+@media (max-width: 400px)
+	.header_fixed .logo
+		margin-right: 0
+	.header_fixed__button_search,
+	.header_fixed__button_calculate
+		display: none
+	.scheme
+		&-bottom
+			&__item
+				&-link
+					margin: 0 5px

@@ -1,0 +1,44 @@
+-
+	var faq = {
+		header: 'Вопросы и ответы',
+		items: [
+			{
+				q: 'Вопрос клиента: может быть длинным текст',
+				a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			},
+			{
+				q: 'Вопрос клиента: может быть длинным текст',
+				a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			},
+			{
+				q: 'Вопрос клиента: может быть длинным текст',
+				a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			},
+			{
+				q: 'Вопрос клиента: может быть длинным текст',
+				a: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			},
+		],
+		cta: {
+			header: '<strong>Купите бетон марки М100 от производителя без наценок и переплат –</strong> своевременно изготовим партию нужного объема и доставим ее на объект',
+			text: 'Работаем по Московской области',
+			button: { href: '#callback', text: 'Заказать консультацию' }
+		},
+		
+	}
+
+.faq#faq
+	.container
+		.faq__inner
+			.faq__left
+				h2.faq__header !{faq.header}
+				.faq-items.accordion
+					each item in faq.items
+						.faq__item
+							.faq__item-head !{item.q}
+							.faq__item-body !{item.a}
+			.faq__right
+				.faq-cta
+					p.faq-cta__header !{faq.cta.header}
+					p.faq-cta__text !{faq.cta.text}
+					a.faq-cta__button.btn(href=faq.cta.button.href) !{faq.cta.button.text}

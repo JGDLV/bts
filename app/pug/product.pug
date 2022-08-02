@@ -1,0 +1,14 @@
+extends _layout.pug
+
+block variables
+  -
+    var title = 'Бетон от производителя с доставкой по Московской области'
+    var description = 'Предлагаем купить бетон в Москве и МО. Купите бетон с доставкой – привезем материалы на объект своим транспортом точно в срок. Минимальный заказ – 1 кубометр. Бетон от производителя БетонТрансСтрой с гарантией качества. Скидки от объема'
+    var index = false
+
+block content
+  include components/product/breadcrumbs.pug
+  include components/product/product.pug
+  include components/scheme.pug
+  include components/product/reviews.pug
+  include components/product/faq.pug

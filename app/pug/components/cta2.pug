@@ -1,0 +1,14 @@
+-
+    var cta = {
+        header: 'Обращайтесь, если хотите купить бетон в Истре <br>с доставкой по Московской области',
+        text: 'Ответим на все вопросы, посоветуем подходящие материалы',
+        button: { href: '#callback', text: 'заказать консультацию' }
+    }
+
+.cta.cta_2#cta2(style="background-image:url('img/cta2-bg.jpg')")
+    .container
+        .cta__inner.flex
+            .cta__text-part
+                h2.cta__header !{cta.header}
+                p.cta__text !{cta.text}
+            a.cta__button.btn(href=cta.button.href) !{cta.button.text}

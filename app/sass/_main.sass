@@ -1,0 +1,1253 @@
+$orange: #ff6600
+
+body
+	color: #000000
+	font-family: 'Montserrat', sans-serif
+	font-size: 13px
+	font-weight: 400
+	line-height: calc(18 / 13)
+	letter-spacing: 0.33px
+
+.container
+	max-width: 1200px
+	margin: 0 auto
+	padding: 0 15px
+
+.btn
+	display: flex
+	justify-content: center
+	align-items: center
+	text-align: center
+	box-shadow: 0 3px 0 #cb5100
+	background-color: $orange
+	color: #fff
+	font-size: 14px
+	font-weight: 700
+	line-height: 18px
+	letter-spacing: 0.35px
+	&:hover
+		box-shadow: none
+	&_grey
+		box-shadow: none
+		&:hover
+			background-color: #616161
+	&_stroke
+		border: 1px solid $orange
+		color: $orange
+		background: none
+		box-shadow: none
+
+.header
+	&__top
+		background: #fff
+		padding: 22px 0 21px
+	&__bottom
+		background: #000
+	&__middle
+		max-width: 570px
+		margin: -2px auto 0 0
+	&__right
+		max-width: 354px
+	&__whours
+		font-size: 15px
+		line-height: 18px
+		letter-spacing: 0.38px
+		margin-left: auto
+		padding-top: 9px
+	&__messengers
+		margin-right: auto
+		padding-top: 1px
+	&__messenger
+		width: 27px
+		height: 28px
+		background: #000
+		border-radius: 50%
+		margin-right: 10px
+		color: #fff
+		font-size: 18px
+		display: flex
+		justify-content: center
+		align-items: center
+		&:last-child
+			margin-right: 0
+		&:hover
+			background: $orange
+	&__phone
+		color: #000000
+		font-size: 25px
+		font-weight: 700
+		line-height: 18px
+		letter-spacing: 0.63px
+		display: inline-block
+		margin-top: 5px
+		&:hover
+			color: $orange
+	&__button
+		width: 172px
+		height: 37px
+		color: #ffffff
+		// font-size: 14px
+		// font-weight: 700
+		// line-height: 18px
+		// letter-spacing: 0.35px
+		margin-top: 18px
+
+	&_fixed
+		// padding: 8px 0
+		background: #fff
+		box-shadow: 0 0 44px 2px rgba(175, 175, 175, 0.2)
+		position: relative
+		display: none
+		&__buttons
+		&__button
+			width: 40px
+			height: 40px
+			background-color: $orange
+			background-repeat: no-repeat
+			background-position: center
+			background-size: 22px
+			&:hover
+				background-color: #e55c00
+			& + &
+				margin-left: 10px
+			&_search
+				background-image: url('../img/search.svg')
+			&_calculate
+				background-image: url('../img/calculator.svg')
+			&_phone
+				background-image: url('../img/phone.svg')
+		.logo
+			margin-right: 30px
+			img
+				width: 170px
+		.menu
+			margin-right: auto
+			& > ul
+				& > li
+					padding-right: 23px
+					&.menu-item-has-children
+						&::after
+							top: calc(50% - 3px)
+							right: 7px
+					&:hover
+						& > ul
+							top: 100%
+					& > a
+						color: #000
+						font-size: 13px
+						letter-spacing: 0.33px
+						line-height: 66px
+					ul
+						top: -3000px
+						li
+							&::after
+								top: 13px !important
+						a
+							line-height: 34px
+							font-size: 13px
+		&.stickytop
+			display: block
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 20
+
+.menu
+	& > ul
+		& > li
+			flex-grow: 1
+			text-align: center
+			position: relative
+			&.menu-item-has-children
+				&::after
+					+p
+					width: 9px
+					height: 9px
+					background: url('../img/arrow.svg') no-repeat center
+					background-size: contain
+					top: 21px
+					right: 11px
+					+tr
+				&:hover
+					&::after
+						transform: rotate(810deg)
+			&:hover
+				& > ul
+					opacity: 1
+					z-index: 10
+			&:hover
+				& > a
+					color: $orange
+			& > a
+				display: block
+				color: #ffffff
+				font-size: 15px
+				font-weight: 700
+				line-height: 50px
+				letter-spacing: 0.38px
+			& > ul
+				position: absolute
+				top: 100%
+				left: 0
+				text-align: left
+				background: #fff
+				opacity: 0
+				z-index: -10
+				transition: opacity .3s ease
+				box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1)
+				& > li
+					position: relative
+					&.menu-item-has-children
+						&::after
+							+p
+							width: 9px
+							height: 9px
+							background: url('../img/arrow.svg') no-repeat center
+							background-size: contain
+							top: 16px
+							right: 11px
+							+tr
+						&:hover
+							&::after
+								transform: rotate(810deg)
+					&:hover
+						& > ul
+							opacity: 1
+							z-index: 0
+							height: auto
+							top: 0
+						& > a
+							color: $orange
+					& > a
+						color: #000000
+						font-size: 14px
+						line-height: 15px
+						letter-spacing: 0.35px
+						line-height: 40px
+						display: block
+						padding: 0 16px
+						min-width: 206px
+						border-bottom: 1px solid #e1e1e1
+						white-space: nowrap
+					& > ul
+						position: absolute
+						left: 100%
+						top: 0
+						background: #fff
+						opacity: 0
+						z-index: -10
+						transition: opacity .3s ease
+						height: 0
+						box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1)
+						& > li
+							& > a
+								color: #6b6b6b
+								font-size: 14px
+								line-height: 40px
+								letter-spacing: 0.35px
+								border-bottom: 1px solid #e1e1e1
+								white-space: nowrap
+								line-height: 40px
+								display: block
+								padding: 0 16px
+							&:hover
+								& > a
+									background-color: #eaeaea
+
+// .menu-item-has-children
+// 	&::after
+// 		+p
+// 		width: 9px
+// 		height: 9px
+// 		background: url('../img/arrow.svg') no-repeat center
+// 		background-size: contain
+// 		top: 21px
+// 		right: 11px
+// 	&:hover
+// 		&::after
+// 			transform: rotate(90deg)
+
+.logo
+	margin-right: 29px
+	a
+		display: block
+		line-height: 0
+	img
+		width: 171px
+
+.tagline
+	font-size: 12px
+	font-weight: 300
+	line-height: 15px
+	letter-spacing: 0.3px
+	max-width: 400px
+
+.search
+	padding-top: 19px
+	&-form
+		&__input
+			width: 433px
+			height: 40px
+			background-color: #eaeaea
+			padding: 0 15px
+			color: #6b6b6b
+			font-size: 15px
+			font-weight: 400
+			line-height: 18px
+			letter-spacing: 0.38px
+			font-style: italic
+			&::placeholder
+				color: #6b6b6b
+		&__button
+			width: 137px
+			height: 40px
+			background-color: #727272
+			color: #ffffff
+			font-size: 14px
+			font-weight: 700
+			line-height: 18px
+			letter-spacing: 0.35px
+
+.intro
+	background-repeat: no-repeat
+	background-position: top center
+	background-size: cover
+	padding: 120px 0 184px
+	&__header
+		color: #000000
+		font-family: 'Russo One', sans-serif
+		font-size: 50px
+		font-weight: 400
+		line-height: 60px
+		letter-spacing: 1.25px
+		max-width: 800px
+		margin-bottom: 9px
+	&__subheader
+		color: #ffffff
+		font-size: 45px
+		font-weight: 700
+		line-height: 1
+		letter-spacing: 1.13px
+		background-color: #727272
+		display: inline-block
+		padding: 8px 27px 17px
+		margin-bottom: 30px
+	&__button
+		width: 200px
+		height: 57px
+		color: #ffffff
+		font-family: 'Russo One', sans-serif
+		font-size: 20px
+		line-height: 20px
+		text-transform: uppercase
+		padding-top: 6px
+
+h2
+	font-family: 'Russo One', sans-serif
+	font-weight: 400
+	font-size: 30px
+	line-height: calc(38 / 30)
+	letter-spacing: 0.75px
+
+.subheader
+	font-size: 25px
+	letter-spacing: 0.63px
+
+.benefits
+	padding: 72px 0 75px
+	background-repeat: no-repeat
+	background-position: top center
+	background-size: cover
+	&__header
+		text-align: center
+		margin-bottom: 2px
+	&__subheader
+		text-align: center
+		margin-bottom: 53px
+	&-items
+		display: grid
+		grid-gap: 35px 30px
+		grid-template-columns: repeat(4, 1fr)
+	&__item
+		&-header
+			font-weight: 700
+			margin-bottom: 5px
+		&-image
+			width: 38px
+			height: 38px
+			display: block
+			&-part
+				width: 70px
+				height: 67px
+				box-shadow: 0 3px 0 #c64800
+				background-color: $orange
+				padding-top: 4px
+		&-text
+			&-part
+				width: calc(100% - 100px)
+				margin-top: -4px
+
+.catalog
+	padding: 73px 0 78px
+	&__header
+		text-align: center
+		margin-bottom: 3px
+	&__subheader
+		text-align: center
+		margin-bottom: 52px
+	&-items
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(4, 1fr)
+	&__item
+		position: relative
+		min-height: 270px
+		display: flex
+		&-image
+			position: absolute
+			width: 100%
+			height: 100%
+			object-fit: cover
+			top: 0
+			left: 0
+		&-title
+			background: #000
+			color: #fefefe
+			font-family: 'Russo One', sans-serif
+			font-size: 20px
+			line-height: 60px
+			letter-spacing: 0.5px
+			width: 100%
+			display: block
+			text-align: center
+			position: relative
+			margin-top: auto
+			transition: .25s linear
+		&:hover
+			.catalog__item-title
+				color: $orange
+				line-height: 91px
+
+.cta
+	background-color: #000
+	background-repeat: no-repeat
+	background-position: top center
+	background-size: cover
+	color: #fff
+	padding: 73px 0 74px
+	&__header
+		font-size: 27px
+		line-height: 35px
+		margin-bottom: 16px
+		letter-spacing: 0.68px
+	&__text
+		font-size: 18px
+		line-height: 25px
+		letter-spacing: 0.45px
+		&-part
+			width: calc(100% - 200px)
+	&__button
+		width: 200px
+		height: 57px
+		color: #ffffff
+		font-family: 'Russo One', sans-serif
+		font-size: 20px
+		line-height: 20px
+		text-transform: uppercase
+		margin-top: 40px
+		padding-top: 5px
+		letter-spacing: normal
+	&_2
+		.cta__text-part
+			width: calc(100% - 370px)
+		.cta__button
+			width: 370px
+			padding-top: 6px
+
+.scheme
+	padding: 72px 0 80px
+	background-repeat: no-repeat
+	background-position: top center
+	background-size: cover
+	&__header
+		text-align: center
+		margin-bottom: 3px
+	&__subheader
+		text-align: center
+		margin-bottom: 72px
+	&-items
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(5, 1fr)
+		margin-bottom: 40px
+		counter-reset: schemeItems
+	&__item
+		box-shadow: 0 0 38px 2px rgba(175, 175, 175, 0.15)
+		background-color: #ffffff
+		position: relative
+		&::before,
+		&::after
+			+p
+			z-index: 10
+		&::before
+			content: '0'counter(schemeItems)
+			counter-increment: schemeItems
+			width: 70px
+			height: 67px
+			box-shadow: 0 3px 0 #c64800
+			background-color: $orange
+			display: flex
+			justify-content: center
+			align-items: center
+			color: #ffffff
+			font-family: 'Russo One', sans-serif
+			font-size: 35px
+			font-weight: 400
+			line-height: 1
+			letter-spacing: 0.88px
+			top: -20px
+			left: 50%
+			transform: translateX(-50%)
+			padding-top: 4px
+		&::after
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 20px 0 0 17px
+			border-color: transparent transparent transparent #c64800
+			top: -20px
+			left: calc(50% + 43px)
+			transform: translateX(-50%)
+		&-text
+			&-part
+				padding: 67px 25px 21px 25px
+				height: 100%
+				position: relative
+				&::before,
+				&::after
+					+p
+				&::before
+					top: 5px
+					right: 5px
+					bottom: 5px
+					left: 5px
+					border: 1px solid #eaeaea
+				&::after
+					top: 50%
+					transform: translateY(-50%)
+					left: 100%
+					background: url('../img/dots.svg') no-repeat
+					width: 30px
+					height: 6px
+		&:last-child
+			.scheme__item-text-part
+				&::after
+					content: none
+
+	&-bottom
+		&-items
+			display: grid
+			grid-gap: 30px
+			grid-template-columns: repeat(2, 1fr)
+		&__item
+			box-shadow: 0 0 38px 2px rgba(175, 175, 175, 0.15)
+			background-color: #ffffff
+			background-repeat: no-repeat
+			background-position: right 22px bottom 26px
+			&:first-child
+				background-image: url("../img/server.png")
+			&:last-child
+				background-image: url("../img/like.png")
+			&-link
+				display: block
+				line-height: 0
+				box-shadow: 0 0 0 1px rgba($orange, .5)
+				margin: 0 10px
+				&:hover
+					box-shadow: 0 0 0 1px rgba($orange, 1)
+			&-map
+				color: $orange
+				border-bottom: 1px solid rgba($orange, .5)
+				font-size: 15px
+				font-weight: 700
+				line-height: 20px
+				letter-spacing: normal
+				position: relative
+				&:hover
+					border-bottom-color: transparent
+			&-images
+				margin-top: 21px
+				&-header
+					position: relative
+					text-align: center
+			&-image
+				height: 134px
+				margin: 0 5px
+				position: relative
+			&-header
+				box-shadow: 0 3px 0 $orange
+				background-color: #000000
+				color: #ffffff
+				font-family: 'Russo One', sans-serif
+				font-size: 25px
+				line-height: 18px
+				letter-spacing: 0.63px
+				text-align: center
+				line-height: 67px
+			&-text
+				padding: 20px 20px 26px 26px
+				min-height: 274px
+				position: relative
+				height: calc(100% - 67px)
+				&::before
+					+p
+					top: 5px
+					right: 5px
+					bottom: 5px
+					left: 5px
+					border: 1px solid #eaeaea
+					border-top: 0
+				p
+					margin-bottom: 7px
+					position: relative
+					&:last-child
+						margin-bottom: 0
+
+.about
+	padding: 72px 0 75px
+	&__inner
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(2, 1fr)
+	&__header
+		text-align: center
+		margin-bottom: 33px
+	&__half
+		p
+			margin-bottom: 13px
+			&:last-child
+				margin-bottom: 0
+		&_image
+			padding-top: 8px
+			display: block
+			line-height: 0
+	&__image
+		// border: 1px solid #eaeaea
+		box-shadow: 0 0 0 1px #eaeaea
+		border-radius: 10px
+	&-list
+		margin: -3px 0 15px
+		&__item
+			padding-left: 26px
+			position: relative
+			margin-bottom: 7px
+			&::before
+				+p
+				width: 16px
+				height: 16px
+				background: url('../img/checked.svg') no-repeat
+				background-size: contain
+				top: 0
+				left: 0
+			&:last-child
+				margin-bottom: 0
+	&__link
+		font-family: 'Russo One', sans-serif
+		font-size: 20px
+		line-height: 1
+		color: #000
+		position: relative
+		padding-left: 26px
+		margin-top: 10px
+		display: inline-block
+		letter-spacing: normal
+		&::before,
+		&::after
+			+p
+			width: 19px
+			height: 17px
+			background-repeat: no-repeat
+			background-image: url('../img/right-arrow.svg')
+			background-size: contain
+			top: 1px
+			left: 0
+		&::after
+			background-image: url('../img/right-arrow-hover.svg')
+			opacity: 0
+		span
+			border-bottom: 1px solid #000
+			display: block
+			+tr
+		&:hover
+			&::before
+				opacity: 0
+			&::after
+				opacity: 1
+			span
+				color: $orange
+				border-bottom-color: $orange
+
+.partners
+	padding: 73px 0 77px
+	background-repeat: no-repeat
+	background-position: top center
+	background-size: cover
+	&__header
+		text-align: center
+		margin-bottom: 3px
+	&__subheader
+		text-align: center
+		margin-bottom: 52px
+	&-items
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(4, 1fr)
+	&__item
+		// min-height: 70px
+		box-shadow: 0 0 38px 2px rgba(175, 175, 175, 0.15)
+		background-color: #ffffff
+		padding: 20px 15px
+		&-image
+			max-height: 40px
+
+.footer
+	background: #000
+	color: #fff
+	&__top
+		border-bottom: 1px solid rgba(#fff, .2)
+		padding: 46px 0 47px
+		&-inner
+			display: grid
+			grid-gap: 30px
+			grid-template-columns: repeat(3, 1fr)
+	&__part
+		&_2
+			text-align: center
+		&_3
+			text-align: right
+	&__link
+		color: #fff
+		font-size: 15px
+		border-bottom: 1px solid
+		letter-spacing: normal
+		display: inline-block
+		line-height: 1
+		&:hover
+			color: $orange
+	&__address
+		font-size: 15px
+		line-height: 20px
+		letter-spacing: normal
+		margin-bottom: 23px
+		display: inline-block
+		span
+			padding-left: 16px
+			position: relative
+			&::before
+				+p
+				width: 13px
+				height: 12px
+				background: url('../img/address.svg') no-repeat
+				background-size: contain
+				top: 4px
+				left: 0
+	&__phone
+		color: #ffffff
+		font-size: 25px
+		font-weight: 700
+		line-height: 1
+		letter-spacing: 0.63px
+		&:hover
+			color: $orange
+	&__whours
+		font-size: 15px
+		line-height: 20px
+		letter-spacing: normal
+		margin: 7px 0 6px
+	&__email
+		color: $orange
+		border-bottom: 1px solid $orange
+		font-size: 15px
+		font-weight: 700
+		line-height: 20px
+		letter-spacing: normal
+		&:hover
+			border-bottom-color: transparent
+	&__bottom
+		line-height: 50px
+		color: #afafaf
+		font-size: 15px
+		letter-spacing: normal
+		a
+			color: #afafaf
+			border-bottom: 1px solid #afafaf
+			&:hover
+				border-bottom-color: transparent
+
+.social
+	&__header
+		font-size: 15px
+		font-weight: 700
+		line-height: 20px
+		letter-spacing: normal
+		margin-bottom: 11px
+	&__item
+		width: 34px
+		height: 34px
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+		&:hover
+			opacity: .7
+
+#top
+	background: $orange
+	color: #fff
+	border-radius: 0
+
+.modal
+	margin: auto
+	background: #fff
+	max-width: 570px
+	padding: 44px 40px 49px
+	position: relative
+	&_map
+		padding: 0
+	&_delivery
+		padding: 0
+		max-width: 80%
+	&__header
+		color: $orange
+		font-size: 25px
+		letter-spacing: 0.5px
+		text-align: center
+		margin-bottom: 4px
+	&__text
+		text-align: center
+		font-size: 18px
+		line-height: 25px
+		letter-spacing: 0.36px
+		margin-bottom: 31px
+	&-form
+		display: grid
+		grid-gap: 17px 10px
+		grid-template-columns: repeat(2, 1fr)
+		&__text
+			color: #929292
+			font-size: 15px
+			font-weight: 300
+			line-height: 18px
+			letter-spacing: 0.3px
+			margin-bottom: 7px
+		&__label
+			&_comment, &_privacy
+				grid-column-start: 1
+				grid-column-end: 3
+			&_comment
+				margin-bottom: -12px
+			&_privacy
+				position: relative
+				padding-left: 26px
+				font-weight: 300
+				margin-bottom: 8px
+				&::before, &::after
+					+p
+					width: 17px
+					height: 18px
+					background-color: #eaeaea
+					top: 0
+					left: 0
+				&::after
+					opacity: 0
+					background: url('../img/check.svg') no-repeat center
+					background-size: 11px
+				&.active
+					&::after
+						opacity: 1
+				a
+					color: #333333
+					border-bottom: 1px solid rgba(#333, .5)
+					&:hover
+						border-bottom-color: transparent
+		&__input,
+		&__textarea
+			width: 100%
+			background-color: #eaeaea
+		&__input
+			height: 40px
+			padding: 0 26px
+		&__textarea
+			padding: 15px 26px
+			height: 80px
+			resize: none
+		&__button
+			margin: auto
+			grid-column-start: 1
+			grid-column-end: 3
+			width: 270px
+			height: 60px
+			color: #ffffff
+			font-family: 'Russo One', sans-serif
+			font-size: 16px
+			font-weight: 400
+			line-height: 20px
+			text-transform: uppercase
+			letter-spacing: normal
+
+.breadcrumbs
+	font-size: 14px
+	line-height: 1
+	padding: 28px 0 34px
+	&__item
+		color: $orange
+		padding-right: 15px
+		position: relative
+		&::after
+			+p
+			width: 4px
+			height: 15px
+			background: url('../img/arrow-point-to-right.svg') no-repeat
+			background-size: 5px
+			top: 6px
+			right: 6px
+		&:last-child
+			&::after
+				content: none
+	&__link
+		color: #727272
+		border-bottom: 1px solid rgba(#727272, .5)
+		&:hover
+			border-bottom-color: transparent
+
+.inner
+	h1
+		font-family: 'Russo One'
+		font-size: 30px
+		line-height: 1
+		font-weight: 400
+		margin-bottom: 7px
+	.catalog
+		padding: 0 0 80px
+		&__inner
+			display: grid
+			grid-gap: 30px
+			grid-template-columns: 1fr 3.21fr
+
+.sidebar
+	&__button
+		max-width: 100% !important
+		margin-bottom: 2px
+		+tr
+		cursor: pointer
+		display: none
+	&-menu
+		background: #000
+		margin-bottom: 30px
+		&__item
+			&:last-child
+				a
+					border-bottom: 0
+			&.active
+				background: $orange
+		&__link
+			color: #fff
+			font-size: 14px
+			line-height: 15px
+			font-weight: 500
+			display: block
+			padding: 12.5px 15px
+			border-bottom: 1px solid #e1e1e1
+			&:hover
+				background: $orange
+	&-banner
+		background-color: #ffe0cc
+		padding: 16px 20px 25px
+		&__header
+			font-family: 'Russo One'
+			font-size: 16px
+			line-height: 20px
+			font-weight: 400
+			margin-bottom: 13px
+		&__text
+			margin-bottom: 15px
+		&__button
+			height: 37px
+			padding-top: 2px
+
+.section
+	&-items
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(2, 1fr)
+	&__item
+		box-shadow: 0px 0px 38px 2px rgba(175,175,175,0.15)
+		border: 5px solid #fff
+		&-title
+			font-size: 16px
+			line-height: 1
+			font-weight: 700
+			margin-bottom: 13px
+		&-description
+			line-height: 15px
+			margin-bottom: 10px
+		&-price
+			line-height: 15px
+			font-weight: 500
+			margin-bottom: 13px
+		&-button
+			width: 137px
+			height: 40px
+			padding-bottom: 2px
+			&:hover
+				background: $orange
+				color: #fff
+		&-image
+			width: 100%
+			height: 100%
+			object-fit: cover
+			&-part
+				width: 166px
+				height: 175px
+				border-right: 5px solid #fff
+				line-height: 0
+		&-text
+			&-part
+				width: calc(100% - 166px)
+				height: 100%
+				background-color: #f4f4f4
+				padding: 18px 20px
+
+.description
+	padding: 72px 0 75px
+	background: url('../img/scheme-bg.png') no-repeat top center
+	background-size: cover
+	&__header
+		text-align: center
+		margin-bottom: 4px
+	&__subheader
+		text-align: center
+		margin-bottom: 37px
+	&__text
+		font-size: 18px
+		line-height: 25px
+		letter-spacing: 0.025em
+	&-items
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(2, 1fr)
+		padding: 34px 0
+	&__item
+		border: 1px solid #000000
+		padding: 18px 26px 15px
+		&-header
+			text-align: center
+			font-family: 'Russo One'
+			font-size: 25px
+			line-height: 1
+			font-weight: 400
+			letter-spacing: 0.025em
+			margin-bottom: 21px
+			span
+				border-bottom: 3px solid $orange
+		&-text
+
+.product
+	padding: 5px 0 83px
+	&__inner
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: 1fr 3.22fr
+	&__title
+		font-family: 'Montserrat', sans-serif !important
+		margin: -4px 0 22px !important
+		letter-spacing: 0.025em
+	&__gallery
+		line-height: 0
+		width: 270px
+		overflow: hidden
+		position: relative
+		.swiper-button-prev,
+		.swiper-button-next
+			width: 12px
+			height: 20px
+			opacity: 0.4
+			position: absolute
+			margin-top: 0
+			transform: translateY(-50%)
+			+tr
+			&::after
+				width: 100%
+				height: 100%
+				font-size: 20px
+				color: #000
+				font-weight: 900
+			&:hover
+				opacity: 1
+		.swiper-button-disabled
+			opacity: .15
+	&__image
+		width: 100%
+		height: 270px
+		object-fit: cover
+		display: block
+		margin-bottom: 20px
+	&__slider
+		position: relative
+		&-image
+			cursor: pointer
+	&__top
+		margin-bottom: 20px
+	&__props
+		width: 300px
+		font-size: 15px
+	&__prop
+		margin-bottom: 9px
+		&:last-child
+			margin-bottom: 0
+	&__description
+		width: calc(100% - 300px)
+		p
+			margin-bottom: 14px
+			&:last-child
+				margin-bottom: 0
+	&__table
+		width: 100%
+		margin-bottom: 27px
+		table
+			width: 100%
+			border-collapse: collapse
+			td
+				border: 1px solid #000
+				padding: 6.95px 10px
+				text-align: center
+				line-height: 15px
+				strong
+					font-weight: 500
+	&__order
+		&-button
+			width: 253px
+			height: 57px
+			font-family: 'Russo One', sans-serif
+			font-size: 20px
+			line-height: 20px
+			font-weight: 400
+			text-transform: uppercase
+			padding-top: 6px
+			margin-right: 22px
+		&-text
+			font-size: 12px
+			line-height: 18px
+			font-weight: 500
+			padding-top: 12px
+			p
+				&:first-of-type
+					font-size: 14px
+					color: $orange
+	&__calc
+		margin-left: auto
+		font-size: 14px
+		line-height: 18px
+		font-weight: 700
+		color: #000000
+		border-bottom: 1px solid rgba(#000, .5)
+		position: relative
+		&::before,
+		&::after
+			+p
+			width: 26px
+			height: 26px
+			top: -2px
+			left: -34px
+			background: url('../img/calculator2.svg') no-repeat
+		&::after
+			background: url('../img/calculator2-hover.svg') no-repeat
+			opacity: 0
+		&:hover
+			color: $orange
+			border-bottom: 1px solid rgba($orange, .5)
+			&::before
+				opacity: 0
+			&::after
+				opacity: 1
+
+.reviews
+	padding: 73px 0 74px
+	&__header
+		text-align: center
+		margin-bottom: 32px
+	&__inner
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(2, 1fr)
+		iframe
+			border: 1px solid #eaeaea
+			border-radius: 10px
+
+.faq
+	padding: 72px 0 80px
+	background-color: #f7f7f7
+	&__inner
+		display: grid
+		grid-gap: 30px
+		grid-template-columns: repeat(2, 1fr)
+	&__right
+		padding-top: 68px
+	&__header
+		text-align: center
+		margin-bottom: 30px
+	&-items
+	&__item
+		background-color: #ffffff
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+		&-head
+			cursor: pointer
+			border: 1px solid #eaeaea
+			font-size: 16px
+			line-height: 50px
+			letter-spacing: 0.025em
+			padding: 0 50px 0 18px
+			position: relative
+			+tr
+			&::after
+				+p
+				width: 20px
+				height: 20px
+				top: 15px
+				right: 14px
+				background: url('../img/arrow-point-to-right-orange.svg') no-repeat
+				background-size: 20px
+				+tr
+			&.active
+				color: $orange
+				&::after
+					transform: rotate(810deg)
+		&-body
+			border: 1px solid #eaeaea
+			border-top: 0
+			padding: 17px 20px 14px 20px
+			display: none
+	&-cta
+		background-color: #ffe0cc
+		padding: 25px 30px 33px
+		&__header
+			font-size: 18px
+			line-height: 25px
+			letter-spacing: 0.025em
+			margin-bottom: 4px
+		&__text
+			font-size: 15px
+			line-height: 30px
+			margin-bottom: 14px
+		&__button
+			margin: auto
+			width: 343px
+			height: 57px
+			font-family: 'Russo One', sans-serif
+			font-size: 20px
+			line-height: 20px
+			font-weight: 400
+			text-transform: uppercase
+			padding-top: 6px

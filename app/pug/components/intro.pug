@@ -1,0 +1,12 @@
+-
+  var intro = {
+    header: 'При единовременном заказе каждая третья доставка',
+    subheader: 'на 500 руб. дешевле',
+    button: { href: '#callback', text: 'заказать' }
+  }
+
+.intro#intro(style="background-image:url('img/intro-bg.jpg')")
+  .container
+    h1.intro__header !{intro.header}
+    p.intro__subheader !{intro.subheader}
+    a.intro__button.btn(href=intro.button.href) !{intro.button.text}

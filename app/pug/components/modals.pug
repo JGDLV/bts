@@ -1,0 +1,40 @@
+.modal.mfp-hide#callback
+	h2.modal__header Закажите обратный звонок
+	p.modal__text и специалист компании «БетонТрансСтрой» свяжется с вами в течение рабочего дня
+	form.modal-form
+		label.modal-form__label.modal-form__label_name
+			p.modal-form__text Имя
+			input.modal-form__input(type="text" name="name" placeholder="")
+		label.modal-form__label.modal-form__label_phone
+			p.modal-form__text Телефон *
+			input.modal-form__input(type="text" name="phone" placeholder="+7 (___) ___-__- __" required)
+		label.modal-form__label.modal-form__label_comment
+			p.modal-form__text Комментарий к заявке
+			textarea.modal-form__textarea(name="comment")
+		label.modal-form__label.modal-form__label_privacy
+			input(type="checkbox" required)
+			| Разрешаю обработку #[a(href="#") персональных данных]
+		button.modal-form__button.btn(type="submit") отправить заявку
+
+.modal.mfp-hide#price
+	h2.modal__header Получить прайс-лист
+	form.modal-form
+		label.modal-form__label.modal-form__label_name
+			p.modal-form__text Имя
+			input.modal-form__input(type="text" name="name" placeholder="")
+		label.modal-form__label.modal-form__label_phone
+			p.modal-form__text E-mail *
+			input.modal-form__input(type="text" name="email" placeholder="" required)
+		label.modal-form__label.modal-form__label_comment
+			p.modal-form__text Комментарий к заявке
+			textarea.modal-form__textarea(name="comment")
+		label.modal-form__label.modal-form__label_privacy
+			input(type="checkbox" required)
+			| Разрешаю обработку #[a(href="#") персональных данных]
+		button.modal-form__button.btn(type="submit") отправить заявку
+
+.modal.modal_map.mfp-hide#map
+	<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6777fb43887495dba7c2c3c72d90b97c068e4729f0975a75345e0fa7c422124a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+
+.modal.modal_delivery.mfp-hide#delivery
+	img(src="img/map_bts.png", alt="")

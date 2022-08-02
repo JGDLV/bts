@@ -1,0 +1,67 @@
+-
+    var scheme = {
+        header: 'Освободите себя от лишних забот – закажите бетон от производителя',
+        subheader: 'Обеспечим полное сопровождение: от покупки до доставки',
+        items: [
+            'Оставьте заявку, если хотите заказать бетон от производителя, свяжемся с вами в течение дня.',
+            'Обсудите задачу со специалистом – он посоветует подходящий вариант.',
+            'Заполните данные и подпишите договор – в нем подробно указаны все условия.',
+            'Внесите предоплату – приступим к производству бетона (или других материалов).',
+            'Получите бетон точно в указанные сроки – отправим спецмашину на ваш объект (доставка по МО).',
+        ],
+        bottom: {
+            items: [
+                {
+                    image: '',
+                    header: 'Оплата и доставка',
+                    texts: [
+                        'Воспользуйтесь любым удобным способом на ваше усмотрение: наличные, безналичный расчет, оплата по расчетному счету для юридических лиц. Сообщите пожелания менеджеру при оформлении заявки.',
+                        'Закажите бетон с доставкой прямо на объект – выделим спецмашину для перевозки смеси. Транспортируем материалы по МО, завод расположен в Истре.',
+                    ]
+                },
+                {
+                    image: '',
+                    header: 'Гарантии',
+                    texts: [
+                        'Бетон от производителя «БетонТрансСтрой» соответствует всем требованиям и стандартам к такой продукции. Ознакомьтесь с сертификатами.',
+                        'Помимо этого, гарантируем своевременность доставки и изготовления – обязанности прописываем в договоре.',
+                    ],
+                    images: [
+                        'img/Page1.jpg',
+                        'img/Page2.jpg',
+                    ]
+                },
+            ]
+        }
+    }
+
+.scheme#scheme(style="background-image:url('img/scheme-bg.png')")
+    .container
+        if index == true
+            h2.scheme__header !{scheme.header}
+            p.scheme__subheader.subheader !{scheme.subheader}
+            .scheme-items
+                each item in scheme.items
+                    .scheme__item
+                        .scheme__item-text-part !{item}
+        .scheme-bottom
+            .scheme-bottom-items
+                each i, index in scheme.bottom.items
+                    .scheme-bottom__item
+                        p.scheme-bottom__item-header !{i.header}
+                        .scheme-bottom__item-text
+                            ul.about-list
+                                each p in i.texts
+                                    li.about-list__item !{p}
+                            if index == 0
+                                //- a.scheme-bottom__item-map(href="https://yandex.ru/maps/-/CCUBQHtnSC" target="_blank") Посмотреть на карте
+                                p
+                                    a.scheme-bottom__item-map(href="#map") Посмотреть на карте
+                                p
+                                    a.scheme-bottom__item-map(href="#delivery") Зоны доставки
+                            if i.images
+                                h2.scheme-bottom__item-images-header Сертификаты
+                                .scheme-bottom__item-images.flex.jcc
+                                    each image in i.images
+                                        a.scheme-bottom__item-link(href=image) 
+                                            img.scheme-bottom__item-image(src=image, alt="")

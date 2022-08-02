@@ -1,0 +1,67 @@
+-
+	var product = {
+		title: 'Бетон М100',
+		description: [
+			'Бетон М100 – это недорогой, но при этом качественный универсальный материал, который подходит для множества строительных задач. Например, возведения железобетонных конструкций, которые не подвергаются высоким нагрузкам, сооружения бытовых объектов, подготовительных работ при заливке фундамента, полов в подвальных помещениях, внутренней отделки, благоустройства приусадебных участков.',
+			'Вы можете заказать бетон марки М100 с доставкой по Московской области.',
+		],
+		props: [
+			{ k: 'Класс прочности', v: 'B12,5' },
+			{ k: 'Подвижность', v: 'П1-П4' },
+			{ k: 'Морозостойкость', v: 'F75' },
+			{ k: 'Жесткость', v: 'Ж1-Ж4' },
+			{ k: 'Водонепроницаемость', v: 'W4' },
+		],
+		images: [
+			'img/product-big.jpg',
+			'img/product-big.jpg',
+			'img/product-big.jpg',
+		],
+		order: {
+			button: { href: '#callback', text: 'Оформить заказ' },
+			texts: [
+				'При заказе через сайт скидка 5%',
+				'Скидка только для раздела «Бетон»',
+			]
+		},
+		link: { href: '#', text: 'Рассчитать стоимость' },
+	}
+
+.product#product
+	.container
+		.product__inner
+			.product__left
+				.product__gallery
+					.product__slider2
+						.swiper-wrapper
+							each image in product.images
+								.swiper-slide
+									a.product__link(href=image) 
+										img.product__image(src=image, alt="")
+					.product__slider
+						.swiper-wrapper
+							each image in product.images
+								.swiper-slide
+									img.product__slider-image(src=image, alt="")
+						.swiper-button-prev
+						.swiper-button-next
+			.product__right
+				h1.product__title !{product.title}
+				.product__top.flex
+					.product__props
+						each prop in product.props
+							.product__prop
+								strong !{prop.k}: 
+								| !{prop.v}
+					.product__description
+						each p in product.description
+							p !{p}
+				.product__table
+					include table.html
+				.product__bottom.flex.aic
+					.product__order.flex
+						a.product__order-button.btn(href=product.order.button.href) !{product.order.button.text}
+						.product__order-text
+							each text in product.order.texts
+								p !{text}
+					a.product__calc(href=product.link.href) !{product.link.text}

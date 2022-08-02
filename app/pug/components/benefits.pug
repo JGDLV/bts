@@ -1,0 +1,60 @@
+-
+	var benefits = {
+		header: 'Продажа бетона от производителя в Московской области',
+		subheader: 'Своевременные поставки любой партией от 1 кубометра',
+		items: [
+		{
+			image: 'img/benefits-01.svg',
+			header: 'Высокое качество',
+			text: 'Контролируем все этапы производства бетона, гарантируем соответствие нормам ГОСТ. '
+		},
+		{
+			image: 'img/benefits-02.svg',
+			header: 'Без опозданий',
+			text: 'Закажите партию бетона с доставкой и получите ее точно в установленный срок.'
+		},
+		{
+			image: 'img/benefits-03.svg',
+			header: 'Соблюдение условий',
+			text: 'Не беспокойтесь о сохранности растворов – для перевозки используем спецтранспорт.'
+		},
+		{
+			image: 'img/benefits-04.svg',
+			header: 'Никаких переплат',
+			text: 'Купите бетон от производителя выгодно – работаем без посредников и не завышаем цены.'
+		},
+		{
+			image: 'img/benefits-05.svg',
+			header: 'Бонусы и скидки',
+			text: 'Приобретайте составы и материалы и получите индивидуальное предложение для постоянных клиентов. '
+		},
+		{
+			image: 'img/benefits-06.svg',
+			header: 'Нет ограничений',
+			text: 'Вы сможете купить бетон как минимальной партией от 1 м³, так и крупной – быстро изготовим состав в нужном объеме. '
+		},
+		{
+			image: 'img/benefits-07.svg',
+			header: 'Все марки',
+			text: 'Закажите бетон, который необходим для конкретной задачи – производим виды от М100 до М550. '
+		},
+		{
+			image: 'img/benefits-08.svg',
+			header: 'Сопровождение',
+			text: 'Освободите себя от забот – купите бетон с доставкой, а мы подберем транспорт, составим маршрут и привезем смесь. '
+		},
+		],
+	}
+
+.benefits#benefits(style="background-image:url('img/benefits-bg.png')")
+	.container
+		h2.benefits__header !{benefits.header}
+		p.benefits__subheader.subheader !{benefits.subheader}
+		.benefits-items
+			each item in benefits.items
+				.benefits__item.flex.jcsb
+					.benefits__item-image-part.flex.jcc.aic
+						img.benefits__item-image(src=item.image, alt='')
+					.benefits__item-text-part
+						p.benefits__item-header !{item.header}
+						p.benefits__item-text !{item.text}

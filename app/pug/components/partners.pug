@@ -1,0 +1,37 @@
+-
+    var partners = {
+        header: 'Компании-партнеры, использующие бетон от производителя «БетонТрансСтрой»',
+        subheader: 'Присоединяйтесь к ним и вы – обеспечим выгодное сотрудничество ',
+        items: [
+            //- 'img/partners/logo_5.png',
+            'img/partners/logo_Arxy.svg',
+            'img/partners/logo_brusville.png',
+            'img/partners/logo_Coldy.svg',
+            'img/partners/logo_Dream Wood.png',
+            'img/partners/logo_efftech.png',
+            'img/partners/logo_honka.png',
+            'img/partners/logo_IRPO.png',
+            'img/partners/logo_istrales.png',
+            'img/partners/logo_Istrinskii ZMK.png',
+            'img/partners/logo_Izovek.jpg',
+            //- 'img/partners/logo_KP Novorizhskii.png',
+            //- 'img/partners/logo_NPZ LKT.png',
+            'img/partners/logo_Unimart.png',
+            'img/partners/logo_Zodchii.png',
+            //- 'img/partners/logotype_Zevs.svg',
+            //- 'img/partners/villago.svg',
+            'img/partners/PSO-logo.png',
+            'img/partners/100.jpg',
+            'img/partners/logo-short-redesign-rus.svg',
+            'img/partners/logo_200.png',
+        ],
+    }
+
+.partners#partners(style="background-image:url('img/partners-bg.png')")
+    .container
+        h2.partners__header !{partners.header}
+        p.partners__subheader.subheader !{partners.subheader}
+        .partners-items
+            each item in partners.items
+                .partners__item.flex.jcc.aic
+                    img.partners__item-image(src=item, alt='')

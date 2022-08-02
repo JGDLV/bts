@@ -1,0 +1,57 @@
+-
+    var catalog = {
+        header: 'Купите бетон и другие материалы для строительных нужд',
+        subheader: 'Поможем закрыть любую задачу',
+        items: [
+            {
+                image: 'img/catalog-01.jpg',
+                title: 'Арматура',
+                link: '#'
+            },
+            {
+                image: 'img/catalog-02.jpg',
+                title: 'Бетон',
+                link: '#'
+            },
+            {
+                image: 'img/catalog-03.jpg',
+                title: 'Дорожная плита',
+                link: '#'
+            },
+            {
+                image: 'img/catalog-04.jpg',
+                title: 'Песок',
+                link: '#'
+            },
+            {
+                image: 'img/catalog-05.jpg',
+                title: 'Пескобетон',
+                link: '#'
+            },
+            {
+                image: 'img/catalog-06.jpg',
+                title: 'Щебень',
+                link: '#'
+            },
+            {
+                image: 'img/catalog-07.jpg',
+                title: 'Бутовый камень',
+                link: '#'
+            },
+            {
+                image: 'img/catalog-08.jpg',
+                title: 'Рецикл бетона',
+                link: '#'
+            },
+        ],
+    }
+
+.catalog#catalog
+    .container
+        h2.catalog__header !{catalog.header}
+        p.catalog__subheader.subheader !{catalog.subheader}
+        .catalog-items
+            each item in catalog.items
+                a.catalog__item(href="#")
+                    img.catalog__item-image(src=item.image, alt='')
+                    span.catalog__item-title !{item.title}

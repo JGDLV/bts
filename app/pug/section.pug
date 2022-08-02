@@ -1,0 +1,12 @@
+extends _layout.pug
+
+block variables
+  -
+    var title = 'Продажа бетона от производителя без наценок в Московской области'
+    var description = 'Занимаемся производством и продажей бетона с доставкой по Истре и Московской области. Продажа бетона марок М100–М550 по цене производителя – предусмотрены бонусы и скидки постоянным клиентам. Вся продукция из каталога бетона есть в наличии.'
+    var index = false
+
+block content
+  include components/section/breadcrumbs.pug
+  include components/section/catalog.pug
+  include components/section/description.pug

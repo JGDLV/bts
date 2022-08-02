@@ -1,0 +1,226 @@
+-
+    var clearPhone = function(x) {
+        return x.replace(/\D/g, '');
+    }
+
+    var header = {
+        logo: 'img/logo.png',
+        logo2: 'img/logo2.png',
+        tagline: 'Бетон от производителя и прочие строительные материалы с доставкой по Московской области «БетонТрансСтрой»',
+        whours: 'Пн–Вс: 8:00–21:00 ',
+        phone: '+7 (495) 191-47-97',
+        messengers: [
+            { href: '#', image: '', class: 'fab fa-viber' },
+            { href: '#', image: '', class: 'fab fa-whatsapp' },
+            { href: '#', image: '', class: 'fab fa-telegram-plane' },
+        ],
+        buttons: [
+            { href: '#', text: 'Расчет стоимости' },
+            { href: '#callback', text: 'Обратный звонок' },
+        ]
+    }
+
+    var menu = [
+        {
+            href: '#',
+            text: 'Каталог',
+            items: [
+                {
+                    href: '#',
+                    text: 'Арматура',
+                    items: [
+                        { href: '#', text: 'Гладкая арматура' },
+                        { href: '#', text: 'Рифленая арматура' },
+                        { href: '#', text: 'Композитная арматура' },
+                    ]
+                },
+                {
+                    href: '#',
+                    text: 'Бетон',
+                    items: [
+                        { href: '#', text: 'М100' },
+                        { href: '#', text: 'М150' },
+                        { href: '#', text: 'М200' },
+                        { href: '#', text: 'М250' },
+                        { href: '#', text: 'М300' },
+                        { href: '#', text: 'М350' },
+                        { href: '#', text: 'М400' },
+                        { href: '#', text: 'М450' },
+                        { href: '#', text: 'М500' },
+                        { href: '#', text: 'М550' },
+                    ]
+                },
+                {
+                    href: '#',
+                    text: 'Дорожная плита',
+                    items: [
+                        { href: '#', text: '1П30.18-10 ТУ' },
+                        { href: '#', text: '1П30.18-30 ТУ' },
+                        { href: '#', text: '2П 30.18.-10 ТУ' },
+                        { href: '#', text: '2П30.18-30 ТУ' },
+                    ]
+                },
+                {
+                    href: '#',
+                    text: 'Песок',
+                    items: [
+                        { href: '#', text: 'Песок мелкий' },
+                        { href: '#', text: 'Песок средний' },
+                        { href: '#', text: 'Песок крупный' },
+                        { href: '#', text: 'Песок мытый' },
+                        { href: '#', text: 'Песок сеяный' },
+                        { href: '#', text: 'Песок карьерный' },
+                    ]
+                },
+                {
+                    href: '#',
+                    text: 'Пескобетон',
+                    items: [
+                        { href: '#', text: 'М100' },
+                        { href: '#', text: 'М150' },
+                        { href: '#', text: 'М200' },
+                        { href: '#', text: 'М250' },
+                        { href: '#', text: 'М350' },
+                    ]
+                },
+                {
+                    href: '#',
+                    text: 'Щебень',
+                    items: [
+                        { href: '#', text: 'Гравийный' },
+                        { href: '#', text: 'Гранитный' },
+                        { href: '#', text: 'Известняковый' },
+                        { href: '#', text: 'Вторичный' },
+                        { href: '#', text: 'Отсев щебня' },
+                    ]
+                },
+                {
+                    href: '#',
+                    text: 'Бутовый камень',
+                },
+                {
+                    href: '#',
+                    text: 'Рецикл бетона',
+                },
+            ]
+        },
+        {
+            href: '#',
+            text: 'Услуги техники',
+            items: [
+                { href: '', text: 'Автобетононасосы' },
+                { href: '', text: 'Манипуляторы' },
+                { href: '', text: 'Самосвальные полуприцепы' },
+                { href: '', text: 'Экскаватор-погрузчик' },
+            ]
+        },
+        { href: '#', text: 'Оплата и доставка' },
+        { href: '#', text: 'Прайс-лист' },
+        { href: '#', text: 'Акции' },
+        {
+            href: '#',
+            text: 'О компании',
+            items: [
+                { href: '', text: 'Новости' },
+                { href: '', text: 'FAQ' },
+                { href: '', text: 'Вакансии' },
+                { href: '', text: 'Галерея' },
+                { href: '', text: 'Завод' },
+                { href: '', text: 'Лаборатория' },
+            ]
+        },
+        { href: '#', text: 'Блог' },
+        { href: '#', text: 'Контакты' },
+    ]
+
+header.header
+    .header__top
+        .container
+            .header__top-inner.flex
+                .logo
+                    a.logo__link(href='/')
+                        img.logo__image(src=header.logo, alt='')
+                .header__middle.flex
+                    p.tagline !{header.tagline}
+                    p.header__whours !{header.whours}
+                    .search
+                        form.search-form.flex
+                            input.search-form__input(type="text" placeholder="Поиск" required)
+                            button.search-form__button.btn.btn_grey(type="submit") Найти
+                .header__right.flex.jcsb
+                    .header__messengers.flex
+                        each i in header.messengers
+                            a.header__messenger(href=i.href, class=i.class)
+                    a.header__phone(href="tel:+" + clearPhone(header.phone)) !{header.phone}
+                    each button in header.buttons
+                        a.header__button.btn(href=button.href) !{button.text}
+    .header__bottom
+        .container
+            .menu.mobile-menu
+                ul.menu-items.flex
+                    each item in menu
+                        if item.items
+                            li.menu-item-has-children
+                                a(href=item.href) !{item.text}
+                                ul
+                                    each a in item.items
+                                        if a.items
+                                            li.menu-item-has-children
+                                                a(href=a.href) !{a.text}
+                                                ul
+                                                    each b in a.items
+                                                        li
+                                                            a(href=b.href) !{b.text}
+                                        else
+                                            li
+                                                a(href=a.href) !{a.text}
+                                                if a.items
+                                                    ul
+                                                        each b in a.items
+                                                            li
+                                                                a(href=b.href) !{b.text}
+                        else
+                            li
+                                a(href=item.href) !{item.text}
+
+header.header_fixed
+    .container
+        .header_fixed__inner.flex.aic
+            .logo
+                a.logo__link(href='/')
+                    img.logo__image(src=header.logo2, alt='')
+            .menu
+                ul.menu-items.flex.mobile-menu
+                    each item in menu
+                        if item.items
+                            li.menu-item-has-children
+                                a(href=item.href) !{item.text}
+                                ul
+                                    each a in item.items
+                                        if a.items
+                                            li.menu-item-has-children
+                                                a(href=a.href) !{a.text}
+                                                ul
+                                                    each b in a.items
+                                                        li
+                                                            a(href=b.href) !{b.text}
+                                        else
+                                            li
+                                                a(href=a.href) !{a.text}
+                                                if a.items
+                                                    ul
+                                                        each b in a.items
+                                                            li
+                                                                a(href=b.href) !{b.text}
+                        else
+                            li
+                                a(href=item.href) !{item.text}
+            .header_fixed__buttons.flex
+                a.header_fixed__button.header_fixed__button_search(href="#") 
+                a.header_fixed__button.header_fixed__button_calculate(href="#") 
+                a.header_fixed__button.header_fixed__button_phone(href="tel:+" + clearPhone(header.phone)) 
+                .menu-toggle
+                    i.icon-toggle
+                        span
+                        span
+                        span
